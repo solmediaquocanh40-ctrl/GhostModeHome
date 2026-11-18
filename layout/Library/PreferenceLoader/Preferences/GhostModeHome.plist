@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>entry</key>
+	<dict>
+		<key>cell</key>
+		<string>PSLinkCell</string>
+		<key>label</key>
+		<string>GhostModeHome</string>
+		<key>plist</key>
+		<string>GhostModeHome</string>
+	</dict>
+	<key>title</key>
+	<string>GhostModeHome</string>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>CHUNG</string>
+			<key>footerText</key>
+			<string>Ẩn toàn bộ icon màn hình chính để khoe trọn hình nền. Chạm lại đúng cử chỉ đã chọn để hiện về.</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.vn.ghostmodehome</string>
+			<key>key</key>
+			<string>enabled</string>
+			<key>label</key>
+			<string>Bật GhostModeHome</string>
+			<key>PostNotification</key>
+			<string>com.vn.ghostmodehome/prefsChanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>CỬ CHỈ KÍCH HOẠT (chọn một hoặc nhiều)</string>
+			<key>footerText</key>
+			<string>Mặc định chỉ bật "Chạm 3 lần" để không xung đột với DoubleTapToLock (chạm 2 lần tắt màn hình). Mọi cử chỉ chỉ nhận khi chạm vào vùng trống, không trúng icon.</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.vn.ghostmodehome</string>
+			<key>key</key>
+			<string>gestureTripleTap</string>
+			<key>label</key>
+			<string>Chạm 3 lần vào vùng trống</string>
+			<key>PostNotification</key>
+			<string>com.vn.ghostmodehome/prefsChanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.vn.ghostmodehome</string>
+			<key>key</key>
+			<string>gestureTwoFingerDoubleTap</string>
+			<key>label</key>
+			<string>Hai ngón chạm 2 lần</string>
+			<key>PostNotification</key>
+			<string>com.vn.ghostmodehome/prefsChanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.vn.ghostmodehome</string>
+			<key>key</key>
+			<string>gesturePinch</string>
+			<key>label</key>
+			<string>Bóp hai ngón để ẩn, xoè ra để hiện</string>
+			<key>PostNotification</key>
+			<string>com.vn.ghostmodehome/prefsChanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.vn.ghostmodehome</string>
+			<key>key</key>
+			<string>gestureTwoFingerSwipeDown</string>
+			<key>label</key>
+			<string>Hai ngón vuốt xuống</string>
+			<key>PostNotification</key>
+			<string>com.vn.ghostmodehome/prefsChanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.vn.ghostmodehome</string>
+			<key>key</key>
+			<string>gestureShake</string>
+			<key>label</key>
+			<string>Lắc máy</string>
+			<key>PostNotification</key>
+			<string>com.vn.ghostmodehome/prefsChanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.vn.ghostmodehome</string>
+			<key>key</key>
+			<string>gestureStatusBarDoubleTap</string>
+			<key>label</key>
+			<string>Chạm 2 lần vào thanh trạng thái</string>
+			<key>PostNotification</key>
+			<string>com.vn.ghostmodehome/prefsChanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>ẨN KÈM</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.vn.ghostmodehome</string>
+			<key>key</key>
+			<string>hideDock</string>
+			<key>label</key>
+			<string>Ẩn cả thanh Dock</string>
+			<key>PostNotification</key>
+			<string>com.vn.ghostmodehome/prefsChanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.vn.ghostmodehome</string>
+			<key>key</key>
+			<string>hidePageDots</string>
+			<key>label</key>
+			<string>Ẩn chấm chuyển trang</string>
+			<key>PostNotification</key>
+			<string>com.vn.ghostmodehome/prefsChanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.vn.ghostmodehome</string>
+			<key>key</key>
+			<string>hideSearchPill</string>
+			<key>label</key>
+			<string>Ẩn nút Tìm kiếm (iOS 16)</string>
+			<key>PostNotification</key>
+			<string>com.vn.ghostmodehome/prefsChanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>HIỆU ỨNG (mượt là trên hết)</string>
+			<key>footerText</key>
+			<string>Mọi chuyển động đều dùng vật lý lò xo. "Lan sóng" cho từng icon xuất hiện lần lượt theo khoảng cách từ điểm chạm, như gợn nước.</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>default</key>
+			<real>0.45</real>
+			<key>defaults</key>
+			<string>com.vn.ghostmodehome</string>
+			<key>key</key>
+			<string>animDuration</string>
+			<key>label</key>
+			<string>Thời gian hiệu ứng (giây)</string>
+			<key>min</key>
+			<real>0.15</real>
+			<key>max</key>
+			<real>0.9</real>
+			<key>showValue</key>
+			<true/>
+			<key>PostNotification</key>
+			<string>com.vn.ghostmodehome/prefsChanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>default</key>
+			<real>0.85</real>
+			<key>defaults</key>
+			<string>com.vn.ghostmodehome</string>
+			<key>key</key>
+			<string>animScale</string>
+			<key>label</key>
+			<string>Mức thu nhỏ khi ẩn</string>
+			<key>min</key>
+			<real>0.5</real>
+			<key>max</key>
+			<real>1.0</real>
+			<key>showValue</key>
+			<true/>
+			<key>PostNotification</key>
+			<string>com.vn.ghostmodehome/prefsChanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.vn.ghostmodehome</string>
+			<key>key</key>
+			<string>stagger</string>
+			<key>label</key>
+			<string>Hiệu ứng lan sóng theo điểm chạm</string>
+			<key>PostNotification</key>
+			<string>com.vn.ghostmodehome/prefsChanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>AN TOÀN &amp; KHÁC</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.vn.ghostmodehome</string>
+			<key>key</key>
+			<string>autoRestoreOnUnlock</string>
+			<key>label</key>
+			<string>Tự hiện lại icon sau khi mở khoá</string>
+			<key>PostNotification</key>
+			<string>com.vn.ghostmodehome/prefsChanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.vn.ghostmodehome</string>
+			<key>key</key>
+			<string>debug</string>
+			<key>label</key>
+			<string>Ghi log gỡ lỗi (Documents/GhostModeHome.log)</string>
+			<key>PostNotification</key>
+			<string>com.vn.ghostmodehome/prefsChanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>GhostModeHome 1.0.0 — made by Quoc. Nếu lỡ ẩn icon mà quên cử chỉ: khoá máy rồi mở khoá lại (icon tự hiện về), hoặc tắt tweak trong Cài đặt.</string>
+		</dict>
+	</array>
+</dict>
+</plist>
