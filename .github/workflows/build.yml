@@ -16,6 +16,8 @@ jobs:
           git clone --depth=1 -n https://github.com/theos/sdks.git /tmp/sdks
           cd /tmp/sdks && git sparse-checkout set iPhoneOS16.5.sdk && git checkout
           cp -r /tmp/sdks/iPhoneOS16.5.sdk "$THEOS/sdks/"
+      - name: Install ldid
+        run: brew install ldid
       - name: Build (rootful)
         run: |
           export THEOS=~/theos
@@ -36,6 +38,8 @@ jobs:
           git clone --depth=1 -n https://github.com/theos/sdks.git /tmp/sdks
           cd /tmp/sdks && git sparse-checkout set iPhoneOS16.5.sdk && git checkout
           cp -r /tmp/sdks/iPhoneOS16.5.sdk "$THEOS/sdks/"
+      - name: Install ldid
+        run: brew install ldid
       - name: Build (rootless)
         run: |
           export THEOS=~/theos
@@ -56,6 +60,8 @@ jobs:
           git clone --depth=1 -n https://github.com/theos/sdks.git /tmp/sdks
           cd /tmp/sdks && git sparse-checkout set iPhoneOS16.5.sdk && git checkout
           cp -r /tmp/sdks/iPhoneOS16.5.sdk "$THEOS/sdks/"
+      - name: Install ldid
+        run: brew install ldid
       - name: Build (roothide)
         run: |
           export THEOS=~/theos
