@@ -138,8 +138,12 @@ static NSArray<UIWindow *> *GMAllWindows(void) {
         }
     } @catch (__unused NSException *e) {}
     if (wins.count == 0) {
-        NSArray *w = [UIApplication sharedApplication].windows;
-        if (w) [wins addObjectsFromArray:w];
+        // Tránh property "windows" (deprecated, SDK mới biên dịch thành lỗi
+        // với -Werror) — lấy qua KVC cho an toàn.
+        @try {
+            NSArray *w = [[UIApplication sharedApplication] valueForKey:@"windows"];
+            if (w) [wins addObjectsFromArray:w];
+        } @catch (__unused NSException *e) {}
     }
     return wins;
 }
@@ -232,7 +236,9 @@ static void GMToggleAt(CGPoint origin) {
 @interface GMGestureHandler : NSObject <UIGestureRecognizerDelegate>
 + (instancetype)shared;
 - (void)attachToRootView:(UIView *)root;
+- (void)attachToStatusBarIfPossible;
 - (void)refreshEnabledStates;
+- (void)handleShake;
 @end
 
 @implementation GMGestureHandler {
@@ -279,7 +285,7 @@ static void GMToggleAt(CGPoint origin) {
     _recs[@"pinch"] = pinch;
 
     UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onSwipe:)];
-    swipe.direction = UISwipeGestureDirectionDown;
+    swipe.direction = UISwipeGestureRecognizerDirectionDown;
     swipe.numberOfTouchesRequired = 2;
     swipe.delegate = self;
     swipe.cancelsTouchesInView = NO;
@@ -386,7 +392,7 @@ static void GMLockStateChanged(CFNotificationCenterRef center, void *observer,
 %hook SBRootFolderView
 - (void)didMoveToWindow {
     %orig;
-    if (self.window) [[GMGestureHandler shared] attachToRootView:self];
+    if (((UIView *)self).window) [[GMGestureHandler shared] attachToRootView:(UIView *)self];
 }
 %end
 
@@ -396,9 +402,9 @@ static void GMLockStateChanged(CFNotificationCenterRef center, void *observer,
 - (void)layoutSubviews {
     %orig;
     if (gHidden && !gAnimating) {
-        BOOL inDock = GMHasAncestorClass(self, @"SBDockView");
+        BOOL inDock = GMHasAncestorClass((UIView *)self, @"SBDockView");
         if (!inDock || pHideDock) {
-            for (UIView *sub in self.subviews) {
+            for (UIView *sub in ((UIView *)self).subviews) {
                 if (GMIsIconView(sub) && sub.alpha != 0.0) {
                     sub.alpha = 0.0;
                     sub.transform = GMHiddenTransform();
