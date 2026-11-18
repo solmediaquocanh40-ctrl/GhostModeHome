@@ -6,7 +6,7 @@ on:
 
 jobs:
   rootful:
-    runs-on: macos-14
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
       - name: Install Theos
@@ -26,7 +26,7 @@ jobs:
           path: packages/*.deb
 
   rootless:
-    runs-on: macos-14
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
       - name: Install Theos
@@ -46,7 +46,7 @@ jobs:
           path: packages/*.deb
 
   roothide:
-    runs-on: macos-14
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
       - name: Install Theos (RootHide fork)
